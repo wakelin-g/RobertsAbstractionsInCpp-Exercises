@@ -5,17 +5,13 @@ double windChill(double v, double t);
 void error(std::string msg);
 
 int main(void) {
-    double velocity, temperature;
-    std::cout << "This program takes wind velocity v and temperature t, "
-                 "returning the wind chill."
-              << std::endl;
-    std::cout << "Please enter wind velocity: ";
-    std::cin >> velocity;
-    std::cout << "Please enter temperature: ";
-    std::cin >> temperature;
 
-    std::cout << "The wind chill is: " << windChill(velocity, temperature)
-              << " degrees farenheit." << std::endl;
+    for (double i = 5.0; i <= 60.0; i += 5.0) {
+        for (double j = 40.0; j >= -45.0; j -= 5.0) {
+            std::printf("%3.1f ", windChill(i, j));
+        }
+        std::cout << std::endl;
+    }
 
     return 0;
 }
